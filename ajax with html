@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">If you click the button, I will tell you who I am</h1>
+    <input type="button" onclick="chand()" value="Submit">
+    <div id="sigma"></div>
+    <script>
+        function chand(){
+            console.log("i am ready")
+            var a = new XMLHttpRequest();
+            a.onreadystatechange = function(){
+                console.log("click")
+                if(this.readyState == 4){
+                    if(this.status == 200){
+                        document.getElementById("sigma").innerHTML = this.responseText;
+                    } else {
+                        document.getElementById("sigma").innerHTML ='this error ';
+                    }
+                }
+            };  
+            a.open("GET", "chand calculator.html", true);
+            a.send();
+        }
+    </script>
+</body>
+</html>
