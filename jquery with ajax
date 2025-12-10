@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleeaps.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button>click me</button>
+    <div id="div"></div>
+    <pre>
+        <h1>get method</h1>
+         $("button").click(function(){
+                $.get("fetch.txt", function (data, status){
+                    document.write("data:",data,"\nStatus:",status);
+                });
+            });
+
+            <h1>post method</h1>
+              $("button").click(function (){
+                $.post("fetch.txt",
+                    {
+                        name: "samay raina",
+                        live: "jail road"
+                    },
+                function(data,status){
+                    document.write("data:",data,"\nStatus:",status);
+                });
+            });
+
+    </pre>
+    <script>
+        $(document).ready(function(){
+            // ajax with jquery
+
+            // $("button").click(function(){
+            //     $("#div").load("fetch.txt");
+            // });
+          
+
+        });
+    </script>
+</body>
+</html>
